@@ -130,9 +130,10 @@ class main:
                 self.anim=True
 
     def ennemis(self):
-        self.niv1=randint(5,10)
-        self.niv2=randint(3,5)
+        self.niv1=randint(4,6)
+        self.niv2=randint(2,4)
         self.niv3=randint(1,3)
         self.niv3=randint(0,1)
+
 
 main()
