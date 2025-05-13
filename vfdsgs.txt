@@ -1,5 +1,0 @@
-def draw_map(self) -> None:
-    for i in range(8):
-        for j in range(8):
-            pyxel.blt(i * 16, j * 16, 0, 0, 0, 16, 16)
-    return

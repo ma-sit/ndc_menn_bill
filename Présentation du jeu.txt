@@ -1,0 +1,3 @@
+Naval est un jeux basé sur la bataille naval, le but du jeu est de battre des navires ennemies. A chaque élimination vous remporté un nombre de pièce définie par le niveau du bateau abattue. Ces pièces servirons par la suite a améliorer votre bateau ainsi qu'a augmenter le nombre de canon. De plus, plus votre bateau est amélioré plus celui ci a de point de vis et met des dégâts plus important.
+
+Dans ce jeu, vous aurez besoin d'utiliser les flèches pour vous déplacer mais également du clique gauche pour tirer a gauche ainsi que du clique droit pour tirer a droite.

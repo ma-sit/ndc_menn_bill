@@ -29,6 +29,7 @@ class main:
 
     def draw(self):
         pyxel.bltm(0, 0, 1, 0, 0, 256, 256)
+        pyxel.bltm(0, 0, 1, 256, 256, 16, 16,5)
         pyxel.blt(self.x, self.y, 0, 35, 2, 10, 12, 5, self.r, 1)
         pyxel.text(5, 5, f"niveau {self.niv}, {self.can} canon(s) de chaques cotés" , 7)
         pyxel.text(5, 10, f"argent : {self.gold}", 7)
@@ -61,6 +62,7 @@ class main:
             self.r=180
     
     def tir (self):
+        pyxel.mouse(True)
         if self.feu==False:
             if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT,1,10) :
                 self.feu = True
@@ -134,5 +136,8 @@ class main:
         self.niv2=randint(3,5)
         self.niv3=randint(1,3)
         self.niv3=randint(0,1)
+
+    def btn(self):
+        butten()
 
 main()
