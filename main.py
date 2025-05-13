@@ -2,7 +2,7 @@ import pyxel
 
 class main:
     def __init__(self):
-        pyxel.init(256, 256, title="avion")
+        pyxel.init(256, 256, title="avion", fps=30, quit_key=pyxel.KEY_ESCAPE)
         self.x = 0
         pyxel.run(self.update, self.draw)
     def update(self):
