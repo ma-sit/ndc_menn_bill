@@ -27,7 +27,7 @@ class main:
             self.animation()
 
     def draw(self):
-        pyxel.cls(5)
+        pyxel.bltm(0, 0, 1, 0, 0, 256, 256)
         pyxel.blt(self.x, self.y, 0, 35, 2, 10, 12, 5, self.r, 1)
         pyxel.text(5, 5, f"niveau {self.niv}, {self.can} canon(s) de chaques cotés" , 7)
         pyxel.text(5, 10, f"argent : {self.gold}", 7)
@@ -44,19 +44,19 @@ class main:
     def ship(self):
         self.id=[]
         if pyxel.btnp(pyxel.KEY_RIGHT,1,2):
-            self.x = self.x + 1
+            self.x = min(245,self.x + 1)
             self.r=90
 
         elif pyxel.btnp(pyxel.KEY_LEFT,1,2):
-            self.x = self.x - 1
+            self.x = max(1,self.x - 1)
             self.r=270
 
         elif pyxel.btnp(pyxel.KEY_UP,1,2):
-            self.y = self.y - 1
+            self.y = max(1,self.y - 1)
             self.r=0
 
         elif pyxel.btnp(pyxel.KEY_DOWN,1,2):
-            self.y = self.y + 1
+            self.y = min(245,self.y + 1)
             self.r=180
     
     def tir (self):
@@ -128,5 +128,8 @@ class main:
                 self.etape=None
                 self.anim=True
 
+    def ennemis(self):
+
+        
 
 main()
