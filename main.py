@@ -224,8 +224,12 @@ class main:
                 self.emi[i]["cbl"]=None
 
     def collision(self):
-        for i in range (len(self.emi)):
-
+        if self.xc and self.yc:
+            for i in range (len(self.emi)):
+                if self.emi[i]["xe"]-self.xc<1 or self.emi[i]["xe"]-self.xc>-1:
+                    if self.emi[i]["ye"]- self.yc < 1 or self.emi[i]["ye"] - self.yc>-1:
+                        self.emi.pop(i)
+                        break
 main()
 
 
