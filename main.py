@@ -1,4 +1,7 @@
 from pyxel import *
+import assets.pyxres
 
-init(128, 128, title="Nuit du Code")
+init(256, 256, title="Nuit du Code")
+
+
 
