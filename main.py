@@ -1,1 +1,2 @@
-frome
+ from pyxel import *
+
