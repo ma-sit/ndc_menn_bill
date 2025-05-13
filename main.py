@@ -14,9 +14,11 @@ class main:
         self.xc=None
         self.yc=None
         self.feu=False
-        self.dir=None
+        self.dirx=None
+        self.diry=None
         self.anim=False
         self.etape=0
+        self.dtir =0
 
         pyxel.run(self.update, self.draw)
 
@@ -30,7 +32,7 @@ class main:
         pyxel.text(5, 5, f"niveau {self.niv}, {self.can} canon(s) de chaques cotés" , 7)
         pyxel.text(5, 10, f"argent : {self.gold}", 7)
         if self.feu==True:
-            pyxel.blt(self.xc, self.yc, 0, 80, 32, 1, 1, )
+            pyxel.blt(self.xc, self.yc, 0, 80, 32, 2, 2, )
         
     def ship(self):
         self.id=[]
@@ -51,34 +53,54 @@ class main:
             self.r=180
     
     def tir (self):
-        if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT,1,10) and self.feu==False:
-            self.feu = True
-            if self.r==0 or self.r==180:
-                if self.r==0:
-                    self.dir = -5
-                elif self.r==180:
-                    self.dir = 5
-                self.xc = self.x + 5
-                self.yc = self.y + 8
-            self.a = 0
+        if self.feu==False:
+            if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT,1,10) :
+                self.feu = True
+                if self.r==0 or self.r==180:
+                    if self.r==0:
+                        self.dirx = -5
+                    elif self.r==180:
+                        self.dirx = 5
+                    self.xc = self.x + 5
+                    self.yc = self.y + 8
+                elif self.r==90 or self.r==270:
+                    if self.r==90:
+                        self.diry = -5
+                    elif self.r==270:
+                        self.diry = 5
+                    self.xc = self.x + 8
+                    self.yc = self.y + 5
+                    self.dtir =0
+                self.a = 0
 
-        elif self.feu==False and pyxel.btnp(pyxel.MOUSE_BUTTON_RIGHT,1,10):
-            self.feu = True
-            if self.r==0 or self.r==180:
-                if self.r==0:
-                    self.dir = 5
-                elif self.r==180:
-                    self.dir = -5
-                self.xc = self.x + 5
-                self.yc = self.y + 8
-            self.a = 0
+            elif pyxel.btnp(pyxel.MOUSE_BUTTON_RIGHT,1,10) :
+                self.feu = True
+                if self.r==0 or self.r==180:
+                    if self.r==0:
+                        self.dirx = 5
+                    elif self.r==180:
+                        self.dirx = -5
+                    self.xc = self.x + 5
+                    self.yc = self.y + 8
+                    self.dtir =1
+                elif self.r==90 or self.r==270:
+                    if self.r==90:
+                        self.diry = 5
+                    elif self.r==270:
+                        self.diry = -5
+                    self.xc = self.x + 8
+                    self.yc = self.y + 5
+                    self.dtir =0
+                self.a = 0
 
-        if self.feu==True:
+        elif self.feu==True:
             if self.a != 30:
                 self.a += 1
                 if self.a%2==0:
-                    self.xc = self.xc + self.dir
-                    self.yc = self.yc
+                    if self.dtir ==1:
+                        self.xc = self.xc + self.dirx
+                    else:
+                        self.yc = self.yc + self.diry
             else:
                 self.feu = False
                 self.a = 0
