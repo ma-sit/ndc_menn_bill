@@ -28,7 +28,7 @@ class main:
             self.tir()
             self.animation()
             self.ennemis()
-            
+            self.collision()
 
     def draw(self):
         pyxel.bltm(0, 0, 1, 0, 0, 256, 256)
@@ -222,6 +222,9 @@ class main:
                 self.emi[i]["cbl"]=None
             if self.emi[i]["xe"]==1 or self.emi[i]["xe"] == 250 or self.emi[i]["ye"] == 1 or self.emi[i]["ye"] == 250:
                 self.emi[i]["cbl"]=None
+
+    def collision(self):
+        for i in range (len(self.emi)):
 
 main()
 
