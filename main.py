@@ -28,6 +28,7 @@ class main:
             self.tir()
             self.animation()
             self.ennemis()
+            
 
     def draw(self):
         pyxel.bltm(0, 0, 1, 0, 0, 256, 256)
