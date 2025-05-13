@@ -1,4 +1,5 @@
 import pyxel
+from random import *
 
 class main:
     def __init__(self):
@@ -99,6 +100,7 @@ class main:
             self.dir = -5
             self.xc = self.x
             self.yc = self.y
-
+    def ship_en(self):
+        
 
 main()
