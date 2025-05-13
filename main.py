@@ -1,4 +1,13 @@
-from pyxel import *
-import assets.pyxres
+import pyxel
 
-init(256, 256, title="Nuit du Code")
+class main:
+    def __init__(self):
+        pyxel.init(128, 128, title="Nuit du Code")
+        self.x = 0
+        pyxel.run(self.update, self.draw)
+    def update(self):
+        self.x = (self.x + 1) % pyxel.width
+    def draw(self):
+        pyxel.cls(0)
+        pyxel.rect(self.x, 0, 8, 8, 9)
+main()
