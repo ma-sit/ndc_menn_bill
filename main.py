@@ -2,7 +2,7 @@ import pyxel
 
 class main:
     def __init__(self):
-        pyxel.init(128, 128, title="Nuit du Code")
+        pyxel.init(256, 256, title="avion")
         self.x = 0
         pyxel.run(self.update, self.draw)
     def update(self):
