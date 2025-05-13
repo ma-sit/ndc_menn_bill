@@ -25,6 +25,7 @@ class main:
     def update(self):
             self.ship()
             self.tir()
+            self.anim()
 
     def draw(self):
         pyxel.cls(5)
@@ -33,6 +34,12 @@ class main:
         pyxel.text(5, 10, f"argent : {self.gold}", 7)
         if self.feu==True:
             pyxel.blt(self.xc, self.yc, 0, 80, 32, 2, 2, )
+        if self.etape:
+            if self.etape=0:
+                pyxel.blt(self.xc, self.yc, 0, 35, 2, 10, 12, 5, self.r, 1 )
+            elif self.etape=1:
+
+            if self.etape=2:
         
     def ship(self):
         self.id=[]
@@ -105,6 +112,16 @@ class main:
                 self.feu = False
                 self.a = 0
                 self.anim=True
+                self.etape=0
                 
+    def anim(self): 
+        if self.anim=True: 
+            if self.etape=0: 
+                self.etape+=1 
+            elif self.etape=1:
+                self.etape+=1 
+            elif self.etape+=2:
+                self.etape=None
+                self.anim=True
 
 main()
