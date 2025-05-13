@@ -1,5 +1,4 @@
 import pyxel
-from random import *
 
 class main:
     def __init__(self):
@@ -113,6 +112,16 @@ class main:
                 self.feu = False
                 self.a = 0
                 self.anim=True
+                self.etape=0
                 
+    def anim(self): 
+        if self.anim=True: 
+            if self.etape=0: 
+                self.etape+=1 
+            elif self.etape=1:
+                self.etape+=1 
+            elif self.etape+=2:
+                self.etape=None
+                self.anim=True
 
 main()
