@@ -3,6 +3,7 @@ import pyxel
 class main:
     def __init__(self):
         pyxel.init(256, 256, title="naval", fps=30, quit_key=pyxel.KEY_ESCAPE)
+        pyxel.load("theme.pyxres")
         self.x=128
         self.y=128
         self.r=0
@@ -14,8 +15,8 @@ class main:
             self.direction()
 
     def draw(self):
-        pyxel.cls(0)
-        blt(self.x, self.y, theme.pyxres, u, v, w, h, 5, r, 1 )
+        pyxel.cls(5)
+        pyxel.blt(self.x, self.y, 0, 35, 2, 10, 12, 5, self.r, 1 )
         
     def ship(self):
         self.id=[]
